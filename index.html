@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Rasgo da Fenda — Ficha</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+
+  <!-- LOGIN -->
+  <section id="login" class="screen active">
+    <h1>RASGO DA FENDA</h1>
+    <h2>Aegis — O Despertar</h2>
+    <input id="userInput" placeholder="Nome do jogador">
+    <button onclick="login()">Entrar</button>
+  </section>
+
+  <!-- MENU -->
+  <section id="menu" class="screen">
+    <h2>Menu</h2>
+    <button onclick="openCreate()">Criar Personagem</button>
+    <button onclick="openList('player')">Personagens</button>
+    <button onclick="openList('npc')">NPCs</button>
+    <button onclick="openDice()">Dados</button>
+  </section>
+
+  <!-- CRIAR / EDITAR -->
+  <section id="editor" class="screen">
+    <h2 id="editorTitle"></h2>
+
+    <input id="charName" placeholder="Nome do personagem">
+    <input id="playerName" placeholder="Nome do jogador">
+
+    <textarea id="appearance" placeholder="Aparência"></textarea>
+    <textarea id="history" placeholder="História"></textarea>
+    <textarea id="ambition" placeholder="Ambições"></textarea>
+
+    <h3>Perícias (Pontos: <span id="points">200</span>)</h3>
+    <div id="skills"></div>
+
+    <button onclick="saveCharacter()">Salvar</button>
+    <button onclick="back()">Voltar</button>
+  </section>
+
+  <!-- LISTA -->
+  <section id="list" class="screen">
+    <h2 id="listTitle"></h2>
+    <div id="listContent"></div>
+    <button onclick="back()">Voltar</button>
+  </section>
+
+  <!-- VISUALIZAR -->
+  <section id="view" class="screen">
+    <h2 id="viewName"></h2>
+
+    <div class="bar vida">
+      <button onclick="modStat('vida',-1)">-</button>
+      <span id="vida"></span>
+      <button onclick="modStat('vida',1)">+</button>
+    </div>
+
+    <div class="bar sanidade">
+      <button onclick="modStat('sanidade',-1)">-</button>
+      <span id="sanidade"></span>
+      <button onclick="modStat('sanidade',1)">+</button>
+    </div>
+
+    <div class="bar incontrole">
+      <button onclick="modStat('incontrole',-1)">-</button>
+      <span id="incontrole"></span>
+      <button onclick="modStat('incontrole',1)">+</button>
+    </div>
+
+    <div class="bar aura hidden" id="auraBar">
+      <span id="aura"></span>
+    </div>
+
+    <button onclick="despertar()">DESPERTAR</button>
+    <p id="race"></p>
+
+    <button onclick="back()">Voltar</button>
+  </section>
+
+  <!-- DADOS -->
+  <section id="dice" class="screen">
+    <h2>Rolagem de Dados</h2>
+    <select id="diceChar" onchange="loadDiceSkills()"></select>
+    <div id="diceSkills"></div>
+    <div id="diceResult"></div>
+    <button onclick="back()">Voltar</button>
+  </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
