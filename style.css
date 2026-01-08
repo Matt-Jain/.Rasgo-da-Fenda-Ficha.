@@ -1,0 +1,59 @@
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background: linear-gradient(#0b1a12, #040806);
+  color: #eee;
+}
+
+.screen {
+  display: none;
+  max-width: 720px;
+  margin: auto;
+  padding: 20px;
+}
+
+.screen.active { display: block; }
+
+h1, h2 { text-align: center; }
+
+input, textarea, select {
+  width: 100%;
+  margin: 8px 0;
+  padding: 10px;
+  background: #121f18;
+  border: 1px solid #3c6;
+  color: #fff;
+}
+
+button {
+  width: 100%;
+  margin: 6px 0;
+  padding: 12px;
+  background: #2f5c3a;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover { background: #4b8f62; }
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 6px 0;
+}
+
+.vida { background:#5b1e1e; }
+.sanidade { background:#1e3a5b; }
+.incontrole { background:#3b1e5b; }
+.aura { background:#6b5b1e; }
+
+.hidden { display:none; }
+
+#diceResult {
+  text-align:center;
+  font-size:24px;
+  margin-top:10px;
+}
